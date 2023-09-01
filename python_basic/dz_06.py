@@ -8,8 +8,8 @@ chess_players = {
 
 filtred_players = dict()
 for name, raiting in chess_players.items():
-    shortname = name.split()
     if raiting > 2000:
-        filtred_players[raiting] = f'{shortname[0][:-1]} {shortname[1][0]}.'
+        a, b = name.split()
+        filtred_players[raiting] = f'{a[:-1]} {b[0]}.'
 
 print(filtred_players)
