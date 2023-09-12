@@ -14,7 +14,7 @@ def worktime(func):
         deep = randint(500, 1000)
         result = func(deep)
         finish = time()
-        print(f'Function {func.__name__=}. Execute time is {(finish - start):.4f}')
+        print(f'Function name: {func.__name__}. Execute time is {(finish - start):.4f}')
         return result
     return wrapper
 
@@ -33,5 +33,8 @@ def rand_str_list(deep):
     return res
 
 
-print(rand_int_list())
-print(rand_str_list())
+rand_int_list()
+rand_str_list()
+
+# print(rand_int_list())
+# print(rand_str_list())
