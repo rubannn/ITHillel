@@ -1,3 +1,3 @@
 # ithillel
 
-Homework for Python Basic
+Homework for Python Basic course
