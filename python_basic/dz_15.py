@@ -15,7 +15,7 @@ def signum(x):
 
 while True:
     n = input("Input number: ")
-    if n in ("вихід", "exit", "quit", "e", "q"):
+    if n.lower() in ("вихід", "exit", "quit", "e", "q"):
         break
     n = checknumber(n)
     if isinstance(n, float):
