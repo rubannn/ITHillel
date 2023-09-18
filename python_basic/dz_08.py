@@ -17,17 +17,24 @@
 from random import randint
 
 
+def check(num, x):
+    if num == x:
+        print('You win!')
+        return True
+    txt = 'higher' if num > x else 'less'
+    print(f'\tYou number should be {txt}... ')
+    return False
+
+
 while True:
-    x = randint(1, 10)
+    number = randint(1, 10)
+    count = 0
     while True:
         t = int(input('Input number between 1 - 10: '))
-        if t == x:
-            print('You win!')
+        count += 1
+        if check(number, t):
+            print(f'You made {count} tries\n')
             break
-        elif t < x:
-            print('\tThe number should be higher... ')
-        else:
-            print('\tThe number should be less... ')
 
     print('New game?')
     if input('Input Y/N: ').lower() in 'Nn':
