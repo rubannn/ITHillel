@@ -26,5 +26,5 @@ while True:
         else:
             numtype = f'{signum(n)} ціле число'
     else:
-        numtype = 'неправильне'
+        numtype = 'неправильне число'
     print(f'Ви ввели {numtype}: {n}')
