@@ -9,7 +9,7 @@
 st = b'rxx3xa9sumxc3xa9'
 st_dec = st.decode("utf-8")
 print(st_dec)
-st_enc = st_dec.encode("latin-1")
+st_enc = st_dec.encode("latin1")
 print(st_enc)
-st = st_enc.decode("latin-1")
+st = st_enc.decode("latin1")
 print(st)
