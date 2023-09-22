@@ -28,7 +28,8 @@ from random import randint
 def newcounter(lst, x):
     return sum([1 for t in lst if t == x])
 
-word = lambda x: 'рази' if x % 10 in (2, 3, 4) else 'раз' if x in (1, ) else 'разів'
+word = lambda x: 'рази' if x % 10 in (2, 3, 4) and x % 100 not in (12, 13, 14)\
+    else 'раз' if x in (1, ) else 'разів'
 
 numlist = []
 for _ in range(200):
