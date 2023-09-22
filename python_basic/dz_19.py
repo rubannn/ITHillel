@@ -23,10 +23,11 @@ with open(f"{path}/output/data.json", 'r') as f:
     json_obj = json.load(f)
 
 phones = gen_phones(len(json_obj))
+headers = ['id', 'name', 'age', 'phone']
 
 with open(f"{path}/output/data.csv", 'w', encoding='utf-8') as f:
     writer = csv.writer(f, delimiter=',', lineterminator='\n')
-    writer.writerow(['ID', 'Ім\'я', 'Вік', 'Телефон'])
+    writer.writerow(headers)
     for jsn_num, jsn in enumerate(json_obj):
         for item in jsn:
             id, name, age = item, *jsn[item]
