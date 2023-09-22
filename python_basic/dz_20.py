@@ -7,6 +7,9 @@
 # а рядки стовпцями).
 # До завдання прикріплений приклад як має виглядати змісту підсумкового файлу.
 
+# pip install pyexcel
+# pip install pyexcel-xlsx
+
 import csv
 import os
 import pyexcel as pe

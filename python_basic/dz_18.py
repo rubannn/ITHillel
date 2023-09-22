@@ -4,6 +4,7 @@
 # Зробити близько 5-6 елементів словника.
 # Записати цей словник на диск у json-файл.
 
+
 import json
 from random import randint
 from faker import Faker
