@@ -23,7 +23,7 @@ class Auto():
         self.age += 1
 
     def __str__(self) -> str:
-        return f'=={self.brand}== \n\t{self.age=} \n\t{self.mark=} \n\t{self.color=} \n\t{self.weight=}'
+        return f'== {self.brand} == \n\t{self.age=} \n\t{self.mark=} \n\t{self.color=} \n\t{self.weight=}'
 
 
 auto = Auto('Ford', 10, 'New-13.8')

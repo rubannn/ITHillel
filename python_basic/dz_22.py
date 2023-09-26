@@ -19,7 +19,7 @@ class Auto():
         self.age += 1
 
     def __str__(self) -> str:
-        return f'=={self.brand}== \n\t{self.age=} \n\t{self.mark=} \n\t{self.color=} \n\t{self.weight=}'
+        return f'== {self.brand} == \n\t{self.age=} \n\t{self.mark=} \n\t{self.color=} \n\t{self.weight=}'
 
 
 class Truck(Auto):
@@ -36,6 +36,9 @@ class Truck(Auto):
         print('load')
         time.sleep(1)
 
+    def __str__(self) -> str:
+        return super().__str__() + f'\n\t{self.max_load=}'
+
 
 class Car(Auto):
     def __init__(self, brand, age, mark, max_speed, color=None, weight=None) -> None:
@@ -45,6 +48,9 @@ class Car(Auto):
     def move(self):
         super().move()
         print(f'max speed is {self.max_speed}')
+
+    def __str__(self) -> str:
+        return super().__str__() + f'\n\t{self.max_speed=}'
 
 
 truck1 = Truck('Man', 5, 'm1', 5000)
