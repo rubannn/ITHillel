@@ -32,3 +32,18 @@ Homework for Python Basic course
 
 #### [ДЗ 15. Функції-алгоритми](/python_basic/dz_15.py)
 [Завдання](/python_basic/dz_15.txt)
+
+#### [ДЗ 16. Кодування/декодування](/python_basic/dz_16.py)
+
+#### [ДЗ 17. Збереження/дозапис у файл](/python_basic/dz_17.py)
+
+#### [ДЗ 18. Json](/python_basic/dz_18.py)
+
+#### [ДЗ 19. CSV](/python_basic/dz_19.py)
+[Завдання](/python_basic/dz_19.txt)
+
+#### [ДЗ 20. Excel](/python_basic/dz_20.py)
+
+#### [ДЗ 21. ООП-1](/python_basic/dz_21.py)
+
+ДЗ 22. ООП-2
