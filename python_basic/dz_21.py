@@ -6,10 +6,10 @@
 # Атрибути brand, age та mark є обов'язковими під час оголошення об'єкта.
 
 class Auto():
-    def __init__(self, brand, age, cоlor, mark, weight) -> None:
+    def __init__(self, brand, age, color, mark, weight) -> None:
         self.brand = brand,
         self.age = age
-        self.color = cоlor
+        self.color = color
         self.mark = mark
         self.weight = weight
 

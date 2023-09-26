@@ -2,10 +2,10 @@ import time
 
 
 class Auto():
-    def __init__(self, brand, age, cоlor, mark, weight) -> None:
+    def __init__(self, brand, age, color, mark, weight) -> None:
         self.brand = brand,
         self.age = age
-        self.color = cоlor
+        self.color = color
         self.mark = mark
         self.weight = weight
 
@@ -20,8 +20,8 @@ class Auto():
 
 
 class Truck(Auto):
-    def __init__(self, brand, age, cоlor, mark, weight) -> None:
-        super().__init__(brand, age, cоlor, mark, weight)
+    def __init__(self, brand, age, color, mark, weight) -> None:
+        super().__init__(brand, age, color, mark, weight)
         # max_load
 
     def move(self):

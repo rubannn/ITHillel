@@ -46,4 +46,6 @@ Homework for Python Basic course
 
 #### [ДЗ 21. ООП-1](/python_basic/dz_21.py)
 
-ДЗ 22. ООП-2
+#### [ДЗ 22. ООП-2]()
+
+#### [ДЗ 23. ООП-3]()
