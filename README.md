@@ -2,7 +2,7 @@
 
 Homework for Python Basic course
 
-#### [ДЗ 1. Методи строк](rubannn/ITHillel/blob/main/python_basic/dz_01.py)
+#### [ДЗ 1. Методи строк](/python_basic/dz_01.py)
 
 #### [ДЗ 2. Зміна типів даних](rubannn/ITHillel/blob/main/python_basic/dz_02.py)
 
