@@ -5,7 +5,7 @@ Homework for Python Basic course
 #### [ДЗ 1. Методи строк](/python_basic/dz_01.py)
 
 #### [ДЗ 2. Зміна типів даних](/python_basic/dz_02.py)
-[Завдання](/python_basic/dz_02.txt)
+- [Завдання](/python_basic/dz_02.txt)
 
 #### [ДЗ 3. print / input](/python_basic/dz_03.py)
 
@@ -14,7 +14,7 @@ Homework for Python Basic course
 #### [ДЗ 5. Цикли](/python_basic/dz_05.py)
 
 #### [ДЗ 6. Робота зі словниками](/python_basic/dz_06.py)
-[Завдання](/python_basic/dz_06.txt)
+- [Завдання](/python_basic/dz_06.txt)
 
 #### [ДЗ 7. Тернарний вираз](/python_basic/dz_07.py)
 
@@ -31,7 +31,7 @@ Homework for Python Basic course
 #### [ДЗ 13. Декоратори](/python_basic/dz_13.py)
 
 #### [ДЗ 15. Функції-алгоритми](/python_basic/dz_15.py)
-[Завдання](/python_basic/dz_15.txt)
+- [Завдання](/python_basic/dz_15.txt)
 
 #### [ДЗ 16. Кодування/декодування](/python_basic/dz_16.py)
 
@@ -40,7 +40,7 @@ Homework for Python Basic course
 #### [ДЗ 18. Json](/python_basic/dz_18.py)
 
 #### [ДЗ 19. CSV](/python_basic/dz_19.py)
-[Завдання](/python_basic/dz_19.txt)
+- [Завдання](/python_basic/dz_19.txt)
 
 #### [ДЗ 20. Excel](/python_basic/dz_20.py)
 
