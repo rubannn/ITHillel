@@ -49,3 +49,6 @@ Homework for Python Basic course
 #### [ДЗ 22. ООП-2](/python_basic/dz_22.py)
 
 #### [ДЗ 23. ООП-3]
+
+#### [ДЗ 24. Перевизначення стандартних типів](/python_basic/dz_24.py)
+[Завдання](/python_basic/dz_24.txt)
