@@ -45,7 +45,7 @@ class Circle(Point):
         r = abs(self.radius - other.radius)
         if r == 0:
             return Point(x, y)
-        return Circle(self.radius - other.radius, x, y)
+        return Circle(r, x, y)
 
     def __str__(self):
         return f'Circle({self.x}, {self.y}, radius={self.radius})'
