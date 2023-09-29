@@ -65,6 +65,7 @@ truck2.load()
 truck1.move()
 
 car2.move()
+car2.stop()
 
 print(truck1)
 truck1.birthday()
