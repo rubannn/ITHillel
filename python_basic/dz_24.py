@@ -13,7 +13,7 @@ class String(str):
         return String(self.value.replace(other, '', 1))
 
 
-print('     +     ')
+print('     +++     ')
 s = String('New') + String(890)
 print(s, type(s))
 s = String('New') + None
@@ -24,7 +24,7 @@ s = String('New') + True
 print(s, type(s))
 
 
-print('     -     ')
+print('\n     ---     ')
 s = String('New bala7nce') - 7
 print(s, type(s))
 s = String(55678345672) - 7
@@ -32,4 +32,6 @@ print(s, type(s))
 s = String('pineapple apple pine') - 'apple'
 print(s, type(s))
 s = String('New balance') - 'Bal'
+print(s, type(s))
+s =String('NoneType') - None
 print(s, type(s))
