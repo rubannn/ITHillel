@@ -3,11 +3,6 @@ class Car:
     COLORS = []
     NUMBER_OF_CARS = 0
 
-    def is_valid_fuel_type(self, fuel_type, fuel_list):
-        if fuel_type in fuel_list:
-            return fuel_type
-        return fuel_list[0]
-
     def __init__(self, model, year, fuel_type, color) -> None:
         if color not in Car.COLORS:
             Car.COLORS.append(color)
@@ -19,6 +14,12 @@ class Car:
         self.color = color
         self.fuel_type = self.is_valid_fuel_type(fuel_type, Car.FUEL_TYPES)
         self.number = Car.NUMBER_OF_CARS
+
+    @staticmethod
+    def is_valid_fuel_type(fuel_type, fuel_list):
+        if fuel_type in fuel_list:
+            return fuel_type
+        return fuel_list[0]
 
     def get_used_colors():
         return Car.COLORS
