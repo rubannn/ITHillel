@@ -58,5 +58,5 @@ Homework for Python Basic course
 
 #### [ДЗ 26. Винятки](/python_basic/dz_26.py)
 
-#### [ДЗ 27. Дипломний проект]
+#### [ДЗ 27. Дипломний проект](/python_basic/diplom/)
 - [Завдання](/python_basic/dz_27.txt)
