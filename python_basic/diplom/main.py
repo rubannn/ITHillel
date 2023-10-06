@@ -52,5 +52,7 @@ btn_submit.pack(side=tk.RIGHT, padx=10, ipadx=10)
 btn_clear = tk.Button(master=frm_buttons, text="Clear")
 btn_clear.pack(side=tk.RIGHT, ipadx=10)
 
-# Запуск приложения.
+btn_gen = tk.Button(master=frm_buttons, text="Generate Data")
+btn_gen.pack(side=tk.LEFT, padx=10)
+
 window.mainloop()
