@@ -18,7 +18,11 @@ class Calc:
         return self.value * other.value
 
     def __truediv__(self, other):
-        return self.value / other.value
+        try:
+            res = self.value / other.value
+            return res
+        except ZeroDivisionError:
+            print("division by zero")
 
     def __pow__(self, st):
         return self.value ** st

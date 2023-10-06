@@ -55,3 +55,8 @@ Homework for Python Basic course
 
 #### [ДЗ 25. Статичні методи та методи класу](/python_basic/dz_25.py)
 - [Завдання](/python_basic/dz_25.txt)
+
+#### [ДЗ 26. Винятки](/python_basic/dz_26.py)
+
+#### [ДЗ 27. Дипломний проект]
+- [Завдання](/python_basic/dz_27.txt)
