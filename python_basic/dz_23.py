@@ -58,4 +58,6 @@ print(c1 + c2, type(c1 + c2))
 
 c3 = Circle(5, 7, 13)
 print(c1 - c2, type(c1 - c2))
+print(c1)
 print(c1 - c3, type(c1 - c3))
+print(c1)
