@@ -12,17 +12,17 @@ class Car:
         self.model = model
         self.year = year
         self.color = color
-        self.fuel_type = self.is_valid_fuel_type(fuel_type, Car.FUEL_TYPES)
+        self.fuel_type = self.is_valid_fuel_type(fuel_type)
         self.number = Car.NUMBER_OF_CARS
 
     @staticmethod
-    def is_valid_fuel_type(fuel_type, fuel_list):
-        if fuel_type in fuel_list:
+    def is_valid_fuel_type(fuel_type):
+        if fuel_type in Car.FUEL_TYPES:
             return fuel_type
-        return fuel_list[0]
+        return Car.FUEL_TYPES[0]
 
     def get_used_colors():
-        return Car.COLORS
+        return len(Car.COLORS)
 
     def get_number_of_cars():
         return Car.NUMBER_OF_CARS
@@ -30,7 +30,6 @@ class Car:
     @property
     def numbers(self):
         return f'{self.number} from {Car.NUMBER_OF_CARS}'
-
 
     def __str__(self):
         return f'{self.model} - {self.year} - {self.fuel_type} - {self.color}'
