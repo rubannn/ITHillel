@@ -1,4 +1,6 @@
 import tkinter as tk
+from functools import partial
+from gendata import gen_random_data
 
 # Создается новое окно с заголовком "Введите домашний адрес".
 window = tk.Tk()
@@ -42,17 +44,14 @@ for idx, text in enumerate(labels):
 frm_buttons = tk.Frame()
 frm_buttons.pack(fill=tk.X, ipadx=5, ipady=5)
 
-# Создает кнопку "Отправить" и размещает ее
-# справа от рамки `frm_buttons`.
 btn_submit = tk.Button(master=frm_buttons, text="Submit")
 btn_submit.pack(side=tk.RIGHT, padx=10, ipadx=10)
 
-# Создает кнопку "Очистить" и размещает ее
-# справа от рамки `frm_buttons`.
 btn_clear = tk.Button(master=frm_buttons, text="Clear")
 btn_clear.pack(side=tk.RIGHT, ipadx=10)
 
-btn_gen = tk.Button(master=frm_buttons, text="Generate Data")
+data_rows = 15
+btn_gen = tk.Button(master=frm_buttons, text="Generate Data", command=partial(gen_random_data, data_rows))
 btn_gen.pack(side=tk.LEFT, padx=10)
 
 window.mainloop()

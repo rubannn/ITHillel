@@ -22,12 +22,12 @@ class Car:
         return Car.FUEL_TYPES[0]
 
     @classmethod
-    def get_used_colors(self):
-        return len(Car.COLORS)
+    def get_used_colors(cls):
+        return len(cls.COLORS)
 
     @classmethod
-    def get_number_of_cars(self):
-        return Car.NUMBER_OF_CARS
+    def get_number_of_cars(cls):
+        return cls.NUMBER_OF_CARS
 
     @property
     def numbers(self):
