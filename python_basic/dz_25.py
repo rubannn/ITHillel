@@ -21,15 +21,17 @@ class Car:
             return fuel_type
         return Car.FUEL_TYPES[0]
 
-    def get_used_colors():
+    @classmethod
+    def get_used_colors(self):
         return len(Car.COLORS)
 
-    def get_number_of_cars():
+    @classmethod
+    def get_number_of_cars(self):
         return Car.NUMBER_OF_CARS
 
     @property
     def numbers(self):
-        return f'{self.number} from {Car.NUMBER_OF_CARS}'
+        return f'{self.number} from {Car.NUMBER_OF_CARS}\n'
 
     def __str__(self):
         return f'{self.model} - {self.year} - {self.fuel_type} - {self.color}'
