@@ -18,11 +18,6 @@ def geom_generator(n, a, q):
 
 
 limit = 7
-geom1 = geom_generator(limit, -2, -5)
-for elem in geom1:
-    print(elem)
-
+print([elem for elem in geom_generator(limit, -2, -5)])
 print()
-geom2 = geom_generator(limit, 10, 3)
-for elem in geom2:
-    print(elem)
+print([elem for elem in geom_generator(limit, 10, 3)])
