@@ -4,25 +4,79 @@
 # Обернути кожен метод у блок try/except і зробити обробку кількох винятків, як мінімум ділення на 0.
 # Створити свій виняток, наприклад, зведення в негативний ступінь.
 
+class UserError(UserWarning):
+    def __init__(self):
+        super().__init__("число повинно бути додатним...")
+
+
 class Calc:
-    def __init__(self, value) -> None:
-        self.value = value
+    @staticmethod
+    def check(x):
+        return isinstance(x, int|float) and not isinstance(x, bool)
 
-    def __add__(self, other):
-        return self.value + other.value
-
-    def __sub__(self, other):
-        return self.value - other.value
-
-    def __mul__(self, other):
-        return self.value * other.value
-
-    def __truediv__(self, other):
+    def adds(self, a, b):
         try:
-            res = self.value / other.value
-            return res
-        except ZeroDivisionError:
-            print("division by zero")
+            if self.check(a) and self.check(b):
+                raise TypeError
+            return a + b
+        except TypeError:
+            print('аргументы повинні бути числом')
+            return 'error'
 
-    def __pow__(self, st):
-        return self.value ** st
+    def subs(self, a, b):
+        try:
+            return a - b
+        except TypeError:
+            print('аргументы повинні бути числом')
+            return 'error'
+
+    def muls(self, a, b):
+        try:
+            return a * b
+        except TypeError:
+            print('аргументы повинні бути числом')
+            return 'error'
+
+    def divs(self, a, b):
+        try:
+            return a / b
+        except ZeroDivisionError:
+            return 'важко ділити на 0...'
+        except TypeError:
+            print('аргументы повинні бути числом')
+            return 'error'
+
+
+    def pows(self, a, pw):
+        try:
+            if self.check(a) and self.check(pw):
+                raise TypeError
+            return a ** pw
+        except TypeError:
+            print('аргументы повинні бути числом')
+            return 'error'
+
+    def sqrts(self, a):
+        try:
+            if self.check(a) and a < 0:
+                raise UserError
+            return a ** 0.5
+        except UserError as e:
+            return e
+        except TypeError:
+            print('аргумент повинен бути числом')
+            return 'error'
+
+calc = Calc()
+print(f'{calc.adds(1, 2)=}')
+print(f'{calc.subs(2, 3)=}')
+print(f'{calc.muls(3, 4)=}')
+print(f'{calc.divs(4, 5)=}')
+print(f'{calc.pows(5, 6)=}')
+print(f'{calc.sqrts(6)=}')
+
+print(f'{calc.divs(3, 0)=}')
+print(f'{calc.sqrts(-6)=}')
+print(f'{calc.sqrts("ww")=}')
+print(f'{calc.pows(5, True)=}')
+print(f'{calc.adds([1], 2)=}')
