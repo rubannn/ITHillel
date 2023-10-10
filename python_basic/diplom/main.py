@@ -24,6 +24,7 @@ labels = [
 ]
 
 # Цикл для списка ярлыков полей.
+obj_entry = []
 for idx, text in enumerate(labels):
     # Создает ярлык с текстом из списка ярлыков.
     label = tk.Label(master=frm_form, text=text)
@@ -36,11 +37,24 @@ for idx, text in enumerate(labels):
     # текстовых полей в строку, чей индекс равен idx.
     label.grid(row=idx, column=0, sticky="e")
     entry.grid(row=idx, column=1)
+    obj_entry.append(str(entry.winfo_name()))
+
+print(obj_entry)
 
 # Создает новую рамку `frm_buttons` для размещения в ней
 # кнопок "Отправить" и "Очистить". Данная рамка заполняет
 # все окно в горизонтальном направлении с
 # отступами в 5 пикселей горизонтально и вертикально.
+frm_panel = tk.Frame()
+frm_panel.pack(fill=tk.X, ipadx=5, ipady=5)
+
+btn_prev = tk.Button(master=frm_panel, text="<<")
+btn_prev.pack(side=tk.LEFT, padx=10, ipadx=10)
+
+btn_next = tk.Button(master=frm_panel, text=">>")
+btn_next.pack(side=tk.RIGHT, padx=10, ipadx=10)
+
+
 frm_buttons = tk.Frame()
 frm_buttons.pack(fill=tk.X, ipadx=5, ipady=5)
 

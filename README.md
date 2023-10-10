@@ -17,4 +17,4 @@ Homework for Python Basic course
 |  `11`   | [Функція map()](/python_basic/dz_11.py)                                                  |  `25`   | [Статичні методи та методи класу](/python_basic/dz_25.py) <br>- [Завдання](/python_basic/dz_25.txt)  |
 |  `12`   | [Функція filter()](/python_basic/dz_12.py)                                               |  `26`   | [Винятки](/python_basic/dz_26.py)                                                                    |
 |  `13`   | [Декоратори](/python_basic/dz_13.py)                                                     |  `27`   | [Дипломний проект](/python_basic/diplom/) <br>- [Завдання](/python_basic/dz_27.txt)                  |
-|  `14`   | [PIP](/python_basic/dz_14.txt)                                                           |         |                                                                                                      |  |
+|  `14`   | [PIP](/python_basic/dz_14.txt)                                                           |  `28`   | [Генератори](/python_basic/dz_28.py)                                                                 |
