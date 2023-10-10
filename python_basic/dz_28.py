@@ -9,15 +9,13 @@
 # 10, 30, 90, 270, 810, 2430, ...
 
 def geom_generator(n, a, q):
-    k = 0
     res = a
-    while k < n:
+    for _ in range(n):
         yield res
         res *= q
-        k += 1
 
 
-limit = 7
+limit = 8
 print([elem for elem in geom_generator(limit, -2, -5)])
 print()
 print([elem for elem in geom_generator(limit, 10, 3)])
