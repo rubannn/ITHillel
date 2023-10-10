@@ -12,44 +12,48 @@ class UserError(UserWarning):
 class Calc:
     @staticmethod
     def check(x):
-        return isinstance(x, int|float) and not isinstance(x, bool)
+        return isinstance(x, int|float) and (x == 0 or not isinstance(x, bool))
 
     def adds(self, a, b):
         try:
-            if self.check(a) and self.check(b):
+            if not (self.check(a) and self.check(b)):
                 raise TypeError
             return a + b
         except TypeError:
-            print('аргументы повинні бути числом')
+            print('аргументи повинні бути числом')
             return 'error'
 
     def subs(self, a, b):
         try:
+            if not (self.check(a) and self.check(b)):
+                raise TypeError
             return a - b
         except TypeError:
-            print('аргументы повинні бути числом')
+            print('аргументи повинні бути числом')
             return 'error'
 
     def muls(self, a, b):
         try:
             return a * b
         except TypeError:
-            print('аргументы повинні бути числом')
+            print('аргументи повинні бути числом')
             return 'error'
 
     def divs(self, a, b):
         try:
+            if not (self.check(a) and self.check(b)):
+                raise TypeError
             return a / b
         except ZeroDivisionError:
             return 'важко ділити на 0...'
         except TypeError:
-            print('аргументы повинні бути числом')
+            print('аргументи повинні бути числом')
             return 'error'
 
 
     def pows(self, a, pw):
         try:
-            if self.check(a) and self.check(pw):
+            if not (self.check(a) and self.check(pw)):
                 raise TypeError
             return a ** pw
         except TypeError:
@@ -58,7 +62,9 @@ class Calc:
 
     def sqrts(self, a):
         try:
-            if self.check(a) and a < 0:
+            if not self.check(a):
+                raise TypeError
+            elif a < 0:
                 raise UserError
             return a ** 0.5
         except UserError as e:
@@ -75,7 +81,7 @@ print(f'{calc.divs(4, 5)=}')
 print(f'{calc.pows(5, 6)=}')
 print(f'{calc.sqrts(6)=}')
 
-print(f'{calc.divs(3, 0)=}')
+print(f'\n{calc.divs(3, 0)=}')
 print(f'{calc.sqrts(-6)=}')
 print(f'{calc.sqrts("ww")=}')
 print(f'{calc.pows(5, True)=}')
