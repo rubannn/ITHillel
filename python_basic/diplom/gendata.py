@@ -43,7 +43,7 @@ def gen_random_data(num):
     sex = ["чоловік", "жінка"]
 
     with open(f"{path}/output/diplom_data.csv", 'w', encoding='utf-8') as f:
-        writer = csv.writer(f, delimiter=';', lineterminator='\n')
+        writer = csv.writer(f, delimiter=',', lineterminator='\n')
         for x in range(num):
             gender = random.choice(sex)
             name = get_name(gender == sex[0], fake, surname_path)
@@ -51,9 +51,11 @@ def gen_random_data(num):
             born = fake.date_of_birth(None, 20, 70)
             death = fake.date_between(born) if random.choice([True, False]) else None
 
-            csv_data = [*name, born.strftime("%d.%m.%Y"),
+            csv_data = [*name,
+                        born.strftime("%d.%m.%Y"),
                         death.strftime("%d.%m.%Y") if death else '',
-                        gender, get_age(born, death)]
+                        gender,
+                        get_age(born, death)]
             writer.writerow(csv_data)
 
 def load_data():
@@ -62,5 +64,5 @@ def load_data():
     with open(f"{path}/output/diplom_data.csv", 'r', encoding='utf-8') as f:
         reader = csv.reader(f)
         for row in reader:
-            load_data.append(row[0].split(';'))
+            load_data.append(row)
     return load_data
