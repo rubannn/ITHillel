@@ -51,5 +51,16 @@ def gen_random_data(num):
             born = fake.date_of_birth(None, 20, 70)
             death = fake.date_between(born) if random.choice([True, False]) else None
 
-            csv_data = [*name, born, death, gender, get_age(born, death)]
+            csv_data = [*name, born.strftime("%d.%m.%Y"),
+                        death.strftime("%d.%m.%Y") if death else '',
+                        gender, get_age(born, death)]
             writer.writerow(csv_data)
+
+def load_data():
+    path = os.getcwd()
+    load_data = []
+    with open(f"{path}/output/diplom_data.csv", 'r', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            load_data.append(row[0].split(';'))
+    return load_data
