@@ -1,4 +1,4 @@
-# ithillel
+# IT Hillel
 
 Homework for Python Basic course
 
