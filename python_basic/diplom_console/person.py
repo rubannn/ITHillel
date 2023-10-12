@@ -14,6 +14,8 @@ class Person:
 
     @staticmethod
     def date_valid(str_date):
+        if not str_date:
+            return None
         try:
             str_date = '.'.join(re.split('\.| |-|/', str_date))
             res = datetime.strptime(str_date, '%d.%m.%Y')
