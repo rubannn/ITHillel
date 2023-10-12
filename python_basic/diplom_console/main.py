@@ -1,17 +1,33 @@
 from operation import *
+import msvcrt
 
 def menu():
-    print("\n\t╔═════════════════ МЕНЮ ════════════════╗")
-    print("\t║ [1]. Генерування даних до файлу \t║")
-    print("\t║ [2]. Завантажити дані з файлу \t║")
-    print("\t║ [3]. Зберегти дані до файлу \t\t║")
-    print("\t║ [4]. Новий запис \t\t\t║")
-    print("\t║ [5]. Пошук \t\t\t\t║")
-    print("\t║ [6]. Друк поточних даних \t\t║")
-    print("\t║ \t\t\t\t\t║")
-    print("\t║ [0]. Вихід з програми \t\t║")
-    print("\t╚═══════════════════════════════════════╝")
+    mnu_width = 35
+    mnu = [
+        "[1]. Генерування даних до файлу",
+        "[2]. Завантажити дані з файлу",
+        "[3]. Зберегти дані до файлу",
+        "[4]. Новий запис",
+        "[5]. Пошук",
+        "[6]. Друк поточних даних",
+        "",
+        "[0]. Вихід з програми",
+    ]
+
+    print(
+        f"\n\t╔{'═' * (mnu_width // 2 - 2)} МЕНЮ {'═' * (mnu_width // 2 - 2 + mnu_width % 2)}╗"
+    )
+    for item in mnu:
+        print(f"\t║ {item:<{mnu_width}} ║")
+    print(f"\t╚{'═' * (mnu_width + 2)}╝")
     print("\tВведіть число яке відповідає пункту меню...")
+
+
+def goto_menu():
+    print("\nДля повернення до головного меню натиснить клавішу \"Esc\"...")
+    while True:
+        if msvcrt.kbhit() and msvcrt.getch() == chr(27).encode():
+            break
 
 
 def main():
@@ -20,25 +36,28 @@ def main():
     while True:
         menu()
         key = input()
-        if key == '0': break
-        elif key == '1': todo.gen_data()
-        elif key == '2':
+        if key == "0":
+            break
+        elif key == "1":
+            todo.gen_data()
+        elif key == "2":
             person_list = todo.load_data()
-            print(f'LOAD >> Кількість завантажених записів - {len(person_list)}')
-        elif key == '3':
+        elif key == "3":
             if person_list:
                 todo.save_data(person_list)
             else:
                 print(f"Немає даних для збереження...")
-        elif key == '4':
+        elif key == "4":
             new_person = todo.new_record()
             person_list.append(new_person)
-            print(f'ADD << Дані про новий запис: {new_person}')
-        elif key == '5':
+            print(f"ADD << Дані про новий запис: {new_person}")
+        elif key == "5":
             todo.search(person_list)
-        elif key == '6':
+        elif key == "6":
             todo.show(person_list)
 
+        goto_menu()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

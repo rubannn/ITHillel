@@ -55,6 +55,7 @@ class DoIt:
                             self.str_date(death) if death else '',
                             gender]
                 writer.writerow(csv_data)
+        print(f'GEN << Нові дані сгенеровано')
 
     def load_data(self):
         path = os.getcwd()
@@ -76,6 +77,7 @@ class DoIt:
                         dt_born=dt_born,
                         dt_death=dt_death or None)
                     )
+        print(f"LOAD >> Кількість завантажених записів - {len(load_data)}")
         return load_data
 
     def save_data(self, data):
@@ -119,8 +121,8 @@ class DoIt:
                     res.append(pers)
             print(f'Кількість знайдених записів - {count}')
             if res:
-                for pers in res:
-                    print('\t', pers)
+                for i, pers in enumerate(res):
+                    print(f'\t[{i+1:03d}]   ', pers)
         else:
             print("Немає даних для пошуку. Завантажте дані")
 
@@ -128,5 +130,7 @@ class DoIt:
         print(f'PRINT >>', 'Друк')
         if data:
             for i, pers in enumerate(data):
-                print(f'\t[{i+1:03d}] ', pers)
-        print(f'Надруковано записів - {len(data)}')
+                print(f'\t[{i+1:03d}]   ', pers)
+            print(f'Надруковано записів - {len(data)}')
+        else:
+            print(f'Немає даних для друку')
