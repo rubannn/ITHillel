@@ -14,7 +14,7 @@ def menu():
     print("\tВведіть число яке відповідає пункту меню...")
 
 
-def main(menu):
+def main():
     todo = DoIt()
     person_list = []
     while True:
@@ -41,4 +41,4 @@ def main(menu):
 
 
 if __name__ == '__main__':
-    main(menu)
+    main()
