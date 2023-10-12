@@ -105,7 +105,7 @@ class DoIt:
         return Person(last_name=last_name,
                       first_name=first_name,
                       mid_name=mid_name,
-                      gender= gender,
+                      gender=gender,
                       dt_born=dt_born,
                       dt_death=dt_death or None)
 
