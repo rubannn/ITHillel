@@ -13,26 +13,31 @@ def menu():
     print("\tВведіть число яке відповідає пункту меню...")
 
 
-todo = DoIt()
-person_list = []
-while True:
-    menu()
-    key = input()
-    if key == '0': break
-    elif key == '1': todo.gen_data()
-    elif key == '2':
-        person_list = todo.load_data()
-        print(f'LOAD >> Кількість завантажених записів - {len(person_list)}')
-    elif key == '3':
-        if person_list:
-            todo.save_data(person_list)
-            print(f'SAVE << Кількість збережених записів - {len(person_list)}')
-        else:
-            print(f"Немає даних для збереження...")
-    elif key == '4':
-        new_person = todo.new_record()
-        person_list.append(new_person)
-        print(f'ADD << Дані про новий запис: {new_person}')
-    elif key == '5':
-        print(f'SEARCH >>', end=' ')
-        todo.search(person_list)
+def main(menu):
+    todo = DoIt()
+    person_list = []
+    while True:
+        menu()
+        key = input()
+        if key == '0': break
+        elif key == '1': todo.gen_data()
+        elif key == '2':
+            person_list = todo.load_data()
+            print(f'LOAD >> Кількість завантажених записів - {len(person_list)}')
+        elif key == '3':
+            if person_list:
+                todo.save_data(person_list)
+                print(f'SAVE << Кількість збережених записів - {len(person_list)}')
+            else:
+                print(f"Немає даних для збереження...")
+        elif key == '4':
+            new_person = todo.new_record()
+            person_list.append(new_person)
+            print(f'ADD << Дані про новий запис: {new_person}')
+        elif key == '5':
+            print(f'SEARCH >>', end=' ')
+            todo.search(person_list)
+
+
+if __name__ == '__main__':
+    main(menu)
