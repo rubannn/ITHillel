@@ -7,6 +7,7 @@ def menu():
     print("\t║ [3]. Зберегти дані до файлу \t\t║")
     print("\t║ [4]. Новий запис \t\t\t║")
     print("\t║ [5]. Пошук \t\t\t\t║")
+    print("\t║ [6]. Друк поточних даних \t\t║")
     print("\t║ \t\t\t\t\t║")
     print("\t║ [0]. Вихід з програми \t\t║")
     print("\t╚═══════════════════════════════════════╝")
@@ -27,7 +28,6 @@ def main(menu):
         elif key == '3':
             if person_list:
                 todo.save_data(person_list)
-                print(f'SAVE << Кількість збережених записів - {len(person_list)}')
             else:
                 print(f"Немає даних для збереження...")
         elif key == '4':
@@ -35,8 +35,9 @@ def main(menu):
             person_list.append(new_person)
             print(f'ADD << Дані про новий запис: {new_person}')
         elif key == '5':
-            print(f'SEARCH >>', end=' ')
             todo.search(person_list)
+        elif key == '6':
+            todo.show(person_list)
 
 
 if __name__ == '__main__':

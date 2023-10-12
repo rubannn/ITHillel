@@ -89,6 +89,7 @@ class DoIt:
                             self.str_date(pers.death),
                             DoIt.SEX[not pers.gender]]
                 writer.writerow(csv_data)
+        print(f'SAVE << Кількість збережених записів - {len(data)}')
 
 
     def new_record(self):
@@ -107,6 +108,7 @@ class DoIt:
                       dt_death=dt_death or None)
 
     def search(self, data):
+        print(f'SEARCH >>', end=' ')
         if data:
             pattern = input("Параметри пошуку: ").lower()
             count = 0
@@ -121,3 +123,10 @@ class DoIt:
                     print('\t', pers)
         else:
             print("Немає даних для пошуку. Завантажте дані")
+
+    def show(self, data):
+        print(f'PRINT >>', 'Друк')
+        if data:
+            for i, pers in enumerate(data):
+                print(f'\t[{i+1:03d}] ', pers)
+        print(f'Надруковано записів - {len(data)}')
