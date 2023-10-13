@@ -34,6 +34,8 @@ class Calc:
 
     def muls(self, a, b):
         try:
+            if not (self.check(a) and self.check(b)):
+                raise TypeError
             return a * b
         except TypeError:
             print('аргументи повинні бути числом')
