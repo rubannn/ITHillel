@@ -19,8 +19,8 @@ def menu():
     ]
 
     for border, txt, op in mnu:
-        left, center, right = border
-        print(f"\t{left}{txt:{center}{op}{mnu_width}}{right}")
+        left, symbol, right = border
+        print(f"\t{left}{txt:{symbol}{op}{mnu_width}}{right}")
 
 def goto_menu():
     print("\nДля повернення до головного меню натиснить клавішу \"Esc\"...")
