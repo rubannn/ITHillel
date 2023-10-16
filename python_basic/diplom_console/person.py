@@ -36,7 +36,7 @@ class Person:
         return None
 
     def __str__(self):
-        if self.age:
+        if self.age >= 0:
             txt_age = 'роки' if self.age % 10 in (2, 3, 4) and self.age % 100 not in (12, 13, 14) \
                     else 'рік' if self.age % 10 == 1 and self.age % 100 != 11 \
                     else 'років'

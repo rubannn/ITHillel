@@ -32,7 +32,7 @@ class DoIt:
 
     @staticmethod
     def str_date(date):
-        return date.strftime("%d.%m.%Y") if date else ''
+        return date.strftime("%d.%m.%Y") if date else 'error'
 
     def gen_data(self):
         num = int(input("Оберіть кількість записів для генерування: "))
@@ -47,15 +47,16 @@ class DoIt:
                 gender = random.choice(DoIt.SEX)
                 name = self.get_name(gender == DoIt.SEX[0], fake, surname_path)
 
-                born = fake.date_of_birth(None, 20, 70)
+                born = fake.date_of_birth(minimum_age=20, maximum_age=90)
                 death = fake.date_between(born) if random.choice([True, False]) else None
 
-                csv_data = [*name,
+                # print(f'!! {name[0]} {self.str_date(born)}')
+                csv_data = [name[0], name[1], name[2],
                             self.str_date(born),
                             self.str_date(death) if death else '',
                             gender]
                 writer.writerow(csv_data)
-        print(f'GEN << Нові дані сгенеровано')
+        print(f'GEN << Нові дані сгенеровано та записано до файлу ({DoIt.OUTFILE})')
 
     def load_data(self):
         path = os.getcwd()
@@ -77,7 +78,7 @@ class DoIt:
                         dt_born=dt_born,
                         dt_death=dt_death or None)
                     )
-        print(f"LOAD >> Кількість завантажених записів - {len(load_data)}")
+        print(f"LOAD >> Кількість завантажених записів ({DoIt.OUTFILE}) - {len(load_data)}")
         return load_data
 
     def save_data(self, data):
