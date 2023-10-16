@@ -50,8 +50,7 @@ class DoIt:
                 born = fake.date_of_birth(minimum_age=20, maximum_age=90)
                 death = fake.date_between(born) if random.choice([True, False]) else None
 
-                # print(f'!! {name[0]} {self.str_date(born)}')
-                csv_data = [name[0], name[1], name[2],
+                csv_data = [*name,
                             self.str_date(born),
                             self.str_date(death) if death else '',
                             gender]
@@ -74,7 +73,7 @@ class DoIt:
                         last_name=last_name,
                         first_name=first_name,
                         mid_name=mid_name,
-                        gender= gender == 'm',
+                        gender=(gender == DoIt.SEX[0]),
                         dt_born=dt_born,
                         dt_death=dt_death or None)
                     )
